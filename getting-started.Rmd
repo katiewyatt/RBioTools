@@ -8,8 +8,6 @@ output:
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
- encoding=encoding,
- output_file=file.path(dirname(input_file), out_dir, 'getting-started.html'))})
 editor_options:
   chunk_output_type: console
 ---
@@ -22,7 +20,7 @@ RBiotools is a package for COMPARATIVE MICROBIAL GENOMICS. RBiotools works best 
 
 # Install R, R Studio, and other setup
 
-To get started there are several installations that must be completed. These items are listed in the order in which they should be done.
+To get started there are several installations that must be completed. These items are listed in the order in which they should be completed. 
 
 1.  Install R from here: <https://www.r-project.org/>
 
@@ -44,21 +42,21 @@ To get started there are several installations that must be completed. These ite
 
         -   iii\. Follow any onscreen instructions and wait for it to finish.
 
-4.  Designate a directory on your computer where you will store your work, this will be your **Working Directory.**
+4.  Designate a directory on your computer where you will store your work, this will be your **Working Directory**.
 
     -   *Suggestion:* Create a directory called BMIG5101 where you can store all of your class materials for the semester.
 
-5.  Download the RBioTools tar.gz from here: <https://github.com/hanna-ford/dc3/blob/02c481ba7af3f9aae3b326df43230ec57c21a045/docs/RBiotools_0.5.3.tar.gz>
+5.  Download the RBioTools tar.gz from here: <https://github.com/nsf-dart/RBioTools/blob/91a28f0bc261617280a63ef0dbd4b712cbfb0200/docs/RBiotools_0.5.3.tar.gz>
 
     -   Save this tar.gz file in the root of your Working Directory
 
 6.  Download the `getting-started.R` script from here:
-<https://github.com/hanna-ford/dc3/blob/d5a4a7a22756779fadce123155b990183995e5b2/getting-started.R>
+<https://github.com/nsf-dart/RBioTools/blob/91a28f0bc261617280a63ef0dbd4b712cbfb0200/docs/getting-started.html>
     
     -   When you click on the above link the code will open in browser window; right click in that window and select, "Save as..." (or "Save page as ..."); make sure that the save as type is set to "Text Document"
     -   Save this R script in the root of your Working Directory
 
-7.  Check the version of R that is being used. These instructions were prepared using R version 4.1.2 (2021-11-01); older or newer versions may behave differently.
+7.  Check the version of R that is being used. These instructions were prepared using R version 4.1.2 (2021-11-01, "Bird Hippie"); older or newer versions may behave differently.
 
     -   You can check your version by running `sessionInfo()` in your R Console.
 
