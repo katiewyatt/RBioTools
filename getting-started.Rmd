@@ -140,7 +140,7 @@ setwd("C://Temp//RBiotools//")
 
 ```
 
-```{r image.directory, eval=TRUE, echo=FALSE, error=FALSE, warning=FALSE, message=FALSE}
+```{r image.directory, eval=FALSE, echo=FALSE, error=FALSE, warning=FALSE, message=FALSE}
 
 ifelse(!dir.exists("./R_repository/"), dir.create("./R_repository/"), "Folder exists already") #images reference in this RMarkdown file are stored here
 
@@ -268,11 +268,11 @@ If you want to create a genome atlas for an organism already in a list, such as 
 
 ```{r svg2png, eval=TRUE, message=FALSE, warning=FALSE, include=FALSE, results='hide'}
 
-  rsvg::rsvg_png('./R_repository/GenomeAtlas_AP012306.svg', './R_repository/GenomeAtlas_AP012306.png', width = 800)
+  rsvg::rsvg_png('./GenomeAtlas_AP012306.svg', './GenomeAtlas_AP012306.png', width = 800)
 
 ```
 
-![](./R_repository/GenomeAtlas_AP012306.png)
+![](GenomeAtlas_AP012306.png)
 
 Note: This graphic generated at this step will be a stored as an SVG file in your Working Directory. SVG files can be accessed by:
 
@@ -281,7 +281,7 @@ Note: This graphic generated at this step will be a stored as an SVG file in you
 -   Hover over "Open with"
 -   Select a browser (Firefox, Google Chrome, etc...) to open the file.
 
-![Opening an SVG using a web browser.](./R_repository/genome-atlas-reference-image.png){width="671"}
+![Opening an SVG using a web browser.](genome-atlas-reference-image.png){width="671"}
 
 If you want to create a genome atlas for an item **not** already stored in a list, you can set that "on-the-fly" by locating the accession ID of interest from GenBank and entering as we have below.
 
@@ -311,7 +311,7 @@ Heat Maps work best for groups of organisms that are NOT closely related (like o
 
 ```
 
-![](./R_repository/HeatMapCodon.png)
+![](HeatMapCodon.png)
 
 Note: This graphic generated at this step will be a stored as a PNG file in your Working Directory. This file can be accessed by:
 
@@ -319,7 +319,7 @@ Note: This graphic generated at this step will be a stored as a PNG file in your
 -   Navigate to your Working Directory \* hint: you may need to refresh your Working Directory for it to appear
 -   Click on the "HeatMapCodon.png" file
 
-![Opening the heat codon result from within RStudio.](./R_repository/heat-codon-reference-image.png){width="220"}
+![Opening the heat codon result from within RStudio.](heat-codon-reference-image.png){width="220"}
 
 ## Blast Matrix
 
@@ -349,11 +349,11 @@ Blast Matrices work best for groups of closely related organisms (like our eColi
 
 ```{r svg2png2, eval=TRUE, message=FALSE, warning=FALSE, include=FALSE, results='hide'}
 
-  rsvg::rsvg_png('./R_repository/BlastMatrix.svg', './R_repository/BlastMatrix.png', width = 800)
+  rsvg::rsvg_png('./BlastMatrix.svg', './BlastMatrix.png', width = 800)
 
 ```
 
-![](./R_repository/BlastMatrix.png)
+![](BlastMatrix.png)
 
 Note: This graphic generated at this step will be a stored as an SVG file in your Working Directory. SVG files can be accessed by:
 
