@@ -6,10 +6,14 @@ output:
     toc_float: true
     number_sections: true
 knit: (function(input_file, encoding) {
-  out_dir <- 'docs';
-  rmarkdown::render(input_file,
+    out_dir <- 'docs';
+    rmarkdown::render(input_file,
+      encoding=encoding,
+      output_file=file.path(dirname(input_file), out_dir, 'getting-started.html'))})
 editor_options:
   chunk_output_type: console
+  
+  
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +24,7 @@ RBiotools is a package for COMPARATIVE MICROBIAL GENOMICS. RBiotools works best 
 
 # Install R, R Studio, and other setup
 
-To get started there are several installations that must be completed. These items are listed in the order in which they should be completed. 
+To get started there are several installations that must be completed. These items are listed in the order in which they should be completed.
 
 1.  Install R from here: <https://www.r-project.org/>
 
@@ -50,9 +54,8 @@ To get started there are several installations that must be completed. These ite
 
     -   Save this tar.gz file in the root of your Working Directory
 
-6.  Download the `getting-started.R` script from here:
-<https://github.com/nsf-dart/RBioTools/blob/91a28f0bc261617280a63ef0dbd4b712cbfb0200/docs/getting-started.html>
-    
+6.  Download the `getting-started.R` script from here: <https://github.com/nsf-dart/RBioTools/blob/91a28f0bc261617280a63ef0dbd4b712cbfb0200/docs/getting-started.html>
+
     -   When you click on the above link the code will open in browser window; right click in that window and select, "Save as..." (or "Save page as ..."); make sure that the save as type is set to "Text Document"
     -   Save this R script in the root of your Working Directory
 
@@ -70,7 +73,7 @@ sessionInfo()
 
 9.  Open R Studio
 
-    -   Go to File --> Open File --> Navigate to your working folder; and open "getting-started.R"
+    -   Go to File --\> Open File --\> Navigate to your working folder; and open "getting-started.R"
 
 # Install the required packages and RBiotools
 
