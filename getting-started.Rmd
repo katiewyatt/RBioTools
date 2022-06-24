@@ -132,7 +132,7 @@ sessionInfo()
 
 ```{r working.directory, eval=TRUE, echo=TRUE, error=FALSE, warning=FALSE, message=FALSE}
 
-setwd("C://Temp//BMIG5101//")
+setwd("C://Temp//RBiotools//")
 
 
 ```
