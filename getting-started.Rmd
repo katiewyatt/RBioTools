@@ -30,13 +30,13 @@ To get started there are several installations that must be completed. These ite
 
     -   Make sure that you install the correct version for your operating system.
 
-2.  Install R Studio from here: <https://www.rstudio.com/>
+2.  Install R Studio from here: <https://posit.co/download/rstudio-desktop/>
 
     -   Make sure that you install the correct version for your operating system.
 
 3.  Install requirements for compiling R packages
 
-    -   If Windows, Install Rtools4 <https://cran.r-project.org/bin/windows/Rtools/rtools40.html>
+    -   If Windows, Install Rtools42 for Windows <https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html>
 
     -   If Mac, Install Xcode Command Line Tools
 
@@ -50,16 +50,16 @@ To get started there are several installations that must be completed. These ite
 
     -   *Suggestion:* Create a directory called BMIG5101 where you can store all of your class materials for the semester.
 
-5.  Download the RBioTools tar.gz from here: <https://github.com/nsf-dart/RBioTools/blob/91a28f0bc261617280a63ef0dbd4b712cbfb0200/docs/RBiotools_0.5.3.tar.gz>
+5.  Download the RBioTools tar.gz from here: <https://github.com/arkansas-research-platform/RBioTools/blob/86bfb42d86adc8deffa5bc2d35015d7274fdb654/docs/RBiotools_0.5.3.tar.gz>
 
     -   Save this tar.gz file in the root of your Working Directory
 
-6.  Download the `getting-started.R` script from here: <https://github.com/nsf-dart/RBioTools/blob/91a28f0bc261617280a63ef0dbd4b712cbfb0200/docs/getting-started.html>
+6.  Download the `getting-started.R` script from here: <https://github.com/arkansas-research-platform/RBioTools/blob/86bfb42d86adc8deffa5bc2d35015d7274fdb654/getting-started.R>
 
     -   When you click on the above link the code will open in browser window; right click in that window and select, "Save as..." (or "Save page as ..."); make sure that the save as type is set to "Text Document"
     -   Save this R script in the root of your Working Directory
 
-7.  Check the version of R that is being used. These instructions were prepared using R version 4.1.2 (2021-11-01, "Bird Hippie"); older or newer versions may behave differently.
+7.  Check the version of R that is being used. These instructions were prepared using R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"; older or newer versions may behave differently.
 
     -   You can check your version by running `sessionInfo()` in your R Console.
 
@@ -77,14 +77,18 @@ sessionInfo()
 
 # Install the required packages and RBiotools
 
-1.  Install some basic dependencies that are required for `RBiotools`
+1.  Install some basic dependencies that are required for `RBiotools`; This step is only required the **first** time that you setup your installation of R/RStudio; after the packages have been installed, they will be called using the `library()` function or will be attached as a dependency of RBiotools.
 
-```{r install.basics, eval=FALSE, echo=TRUE, error=FALSE, warning=FALSE, message=FALSE}
+```{r install.basics, eval=FALSE, echo=FALSE, error=FALSE, warning=FALSE, message=FALSE}
 
   #Install some basic dependencies that are required for RBiotools
-  install.packages(c("rlang","ape", "data.table", "fmsb", "gplots", "ggplot2", "grImport", "gridExtra", "pheatmap", "RCurl", "rentrez", "seqinr"))
-  
-  install.packages(c("lattice","mgcv","nlme","survival"))
+  # the R Markdown package includes many of the dependencies for RBiotools
+  install.packages("rmarkdown")
+
+  # the following packages are dependencies of RBiotools that are not in the RMarkdown package and are not pulled by the RBiotools install either
+  install.packages(c("ape", "data.table", "fmsb", "ggplot2", "gplots", "grImport", "gridExtra", "pheatmap", "rentrez", "seqinr"))
+
+
 
 ```
 
@@ -98,7 +102,6 @@ sessionInfo()
 
   BiocManager::install("msa", force = TRUE)
   
-  BiocManager::install("Biostrings", force = TRUE)
 
 ```
 
@@ -260,13 +263,13 @@ Plotting a dendrogram using 16S rRNA genes is pretty easy; however, may take sev
 
 If you want to create a genome atlas for an organism already in a list, such as the ones we have already created (`eColi` and `proteobacteria)`, then you can index into the list for that value.
 
-```{r genome.atlas, eval=TRUE, echo=TRUE}
+```{r genome.atlas, eval=FALSE, echo=TRUE}
 
   createAtlas(eColi[1]) # here we index into the list to select the first item, AP012306.
 
 ```
 
-```{r svg2png, eval=TRUE, message=FALSE, warning=FALSE, include=FALSE, results='hide'}
+```{r svg2png, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, results='hide'}
 
   rsvg::rsvg_png('./GenomeAtlas_AP012306.svg', './GenomeAtlas_AP012306.png', width = 800)
 
@@ -295,7 +298,7 @@ If you want to create a genome atlas for an item **not** already stored in a lis
 
 The `plotUsage` function has many options. See the `plotUsage` documentation for more details and parameters.
 
-```{r plot.usage, eval=TRUE, echo=TRUE}
+```{r plot.usage, eval=FALSE, echo=TRUE}
 
   plotUsage(eColi[1])
 
@@ -305,7 +308,7 @@ The `plotUsage` function has many options. See the `plotUsage` documentation for
 
 Heat Maps work best for groups of organisms that are NOT closely related (like our Proteobacteria group)
 
-```{r plot.heatmap, eval=TRUE, echo=TRUE}
+```{r plot.heatmap, eval=FALSE, echo=TRUE}
 
   plotHeatMapCodon(proteobacteria)
 
@@ -333,7 +336,7 @@ Blast Matrices work best for groups of closely related organisms (like our eColi
 
     -   each table entry is the number of an organism's proteins in a group
 
-```{r blast.matrix.1, eval = TRUE, echo = TRUE}
+```{r blast.matrix.1, eval = FALSE, echo = TRUE}
 
   proteinGrouping <- runLinclust(eColi)
 
@@ -341,13 +344,13 @@ Blast Matrices work best for groups of closely related organisms (like our eColi
 
 2.  Use the homology matrix to plot the Blast Matrix
 
-```{r blast.matrix.2, eval = TRUE, echo = TRUE}
+```{r blast.matrix.2, eval = FALSE, echo = TRUE}
 
   plotBlastMatrix(proteinGrouping)
 
 ```
 
-```{r svg2png2, eval=TRUE, message=FALSE, warning=FALSE, include=FALSE, results='hide'}
+```{r svg2png2, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, results='hide'}
 
   rsvg::rsvg_png('./BlastMatrix.svg', './BlastMatrix.png', width = 800)
 

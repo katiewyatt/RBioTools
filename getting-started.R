@@ -9,17 +9,21 @@
 
 
 # -------------------------------------- #
-# -----2. Install the required packagers and RBiotools -----
+# -----2. Install the required packages and RBiotools -----
 # -------------------------------------- #
 
 
 
 # -----2.1 Install some basic dependencies that are required for RBiotools -----
 
-  install.packages(c("rlang","ape", "data.table", "fmsb", "gplots", "ggplot2", "grImport", "gridExtra", "pheatmap", "RCurl", "rentrez", "seqinr"))
-  
-  install.packages(c("lattice","mgcv","nlme","survival"))
-  
+  # This step is only required the first time that you setup your installation of R/RStudio; after the packages have been installed, they will be called using the library() function or will be attached as a dependency of RBiotools
+
+  # the R Markdown package includes many of the dependencies for RBiotools
+  install.packages("rmarkdown")
+
+  # the following packages are dependencies of RBiotools that are not in the RMarkdown package and are not pulled by the RBiotools install either
+  install.packages(c("ape", "data.table", "fmsb", "ggplot2", "gplots", "grImport", "gridExtra", "pheatmap", "rentrez", "seqinr"))
+
   
 
 # -----2.2 Install msa and Biostrings package via BiocManager (and install BiocManager if it is not already installed) -----
@@ -27,11 +31,10 @@
   if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager", repos ="http://cran.us.r-project.org")
   
-  BiocManager::install("msa", force = TRUE)
-  BiocManager::install("Biostrings", force = TRUE)
+  BiocManager::install("msa", force = TRUE)    
   
-
-
+  
+  
 # -----2.3 Install installr - needed to load RBiotools from tar.gz -----
 
   install.packages("installr")
@@ -51,7 +54,7 @@
     
 # -----2.5 Set the working directory -----
   
-  setwd("C://Temp//BMIG5101//") # change this line, as needed, so that the file path is correct for your computer
+  setwd("C://Temp//RBioTools//") # change this line, as needed, so that the file path is correct for your computer
 
   
     
