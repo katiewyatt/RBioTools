@@ -399,8 +399,8 @@ work, this will be your <strong>Working Directory</strong>.</p>
 can store all of your class materials for the semester.</li>
 </ul></li>
 <li><p>Download the RBioTools tar.gz from here: <a
-href="https://github.com/arkansas-research-platform/RBioTools/blob/86bfb42d86adc8deffa5bc2d35015d7274fdb654/docs/RBiotools_0.5.3.tar.gz"
-class="uri">https://github.com/arkansas-research-platform/RBioTools/blob/86bfb42d86adc8deffa5bc2d35015d7274fdb654/docs/RBiotools_0.5.3.tar.gz</a></p>
+href="https://github.com/arkansas-research-platform/RBioTools/blob/e773ec7b9b83bbba19d96df4e6c94cefe67fa737/docs/RBiotools_0.5.4.tar.gz"
+class="uri">https://github.com/arkansas-research-platform/RBioTools/blob/e773ec7b9b83bbba19d96df4e6c94cefe67fa737/docs/RBiotools_0.5.4.tar.gz</a></p>
 <ul>
 <li>Save this tar.gz file in the root of your Working Directory</li>
 </ul></li>
@@ -433,15 +433,23 @@ class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Install the required
 packages and RBiotools</h1>
 <ol style="list-style-type: decimal">
-<li><p>Install some basic dependencies that are required for
+<li>Install some basic dependencies that are required for
 <code>RBiotools</code>; This step is only required the
 <strong>first</strong> time that you setup your installation of
 R/RStudio; after the packages have been installed, they will be called
 using the <code>library()</code> function or will be attached as a
-dependency of RBiotools.</p></li>
-<li><p>Install <code>msa</code> and <code>Biostrings</code> package via
+dependency of RBiotools.</li>
+</ol>
+<pre class="r"><code>  #Install some basic dependencies that are required for RBiotools
+  # the R Markdown package includes many of the dependencies for RBiotools
+  install.packages(&quot;rmarkdown&quot;)
+
+  # the following packages are dependencies of RBiotools that are not in the RMarkdown package and are not pulled by the RBiotools install either
+  install.packages(c(&quot;ape&quot;, &quot;data.table&quot;, &quot;fmsb&quot;, &quot;ggplot2&quot;, &quot;gplots&quot;, &quot;grImport&quot;, &quot;gridExtra&quot;, &quot;pheatmap&quot;, &quot;rentrez&quot;, &quot;seqinr&quot;))</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Install <code>msa</code> and <code>Biostrings</code> package via
 <code>BiocManager</code> (and install <code>BiocManager</code> if it is
-not already installed)</p></li>
+not already installed)</li>
 </ol>
 <pre class="r"><code>  #Install msa and Biostrings package via BiocManager (and install BiocManager if it is not already installed)
   if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
@@ -486,7 +494,7 @@ need to update the file path depending on where you saved the tar.gz
 from <a href="#install-r-r-studio-and-other-setup">Install R, R Studio,
 and other setup</a>; step 5.</p></li>
 </ol>
-<pre class="r"><code>  install.packages(&quot;RBiotools_0.5.3.tar.gz&quot;, repos = NULL, type = &quot;source&quot;)</code></pre>
+<pre class="r"><code>  install.packages(&quot;RBiotools_0.5.4.tar.gz&quot;, repos = NULL, type = &quot;source&quot;)</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Load the <code>RBiotools</code> library</li>
 </ol>
@@ -635,6 +643,10 @@ list, such as the ones we have already created (<code>eColi</code> and
 <code>proteobacteria)</code>, then you can index into the list for that
 value.</p>
 <pre class="r"><code>  createAtlas(eColi[1]) # here we index into the list to select the first item, AP012306.</code></pre>
+<pre><code>## Writing SVG code for genome with accession ID: AP012306 
+## Calling protein genes for accession ID: AP012306 
+## Calling type TSU rRNA genes for genome with accession ID: AP012306
+## Calling type LSU rRNA genes for genome with accession ID: AP012306</code></pre>
 <p><img src="GenomeAtlas_AP012306.png" /></p>
 <p>Note: This graphic generated at this step will be a stored as an SVG
 file in your Working Directory. SVG files can be accessed by:</p>
@@ -662,12 +674,20 @@ Plot</h2>
 <code>plotUsage</code> documentation for more details and
 parameters.</p>
 <pre class="r"><code>  plotUsage(eColi[1])</code></pre>
+<pre><code>## Plotting AA usage across 3621 proteins</code></pre>
+<p><img src="getting-started_files/figure-html/plot.usage-1.png" width="672" /></p>
 </div>
 <div id="codon-heat-map" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Codon Heat Map</h2>
 <p>Heat Maps work best for groups of organisms that are NOT closely
 related (like our Proteobacteria group)</p>
 <pre class="r"><code>  plotHeatMapCodon(proteobacteria)</code></pre>
+<pre><code>## Calling protein genes for accession ID: CP018228 
+## Calling protein genes for accession ID: CP017405 
+## Calling protein genes for accession ID: CP008957 
+## Calling protein genes for accession ID: HG530068 
+## Calling protein genes for accession ID: CP002031 
+## Calling protein genes for accession ID: CP002332</code></pre>
 <p><img src="HeatMapCodon.png" /></p>
 <p>Note: This graphic generated at this step will be a stored as a PNG
 file in your Working Directory. This file can be accessed by:</p>

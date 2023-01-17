@@ -50,7 +50,7 @@ To get started there are several installations that must be completed. These ite
 
     -   *Suggestion:* Create a directory called BMIG5101 where you can store all of your class materials for the semester.
 
-5.  Download the RBioTools tar.gz from here: <https://github.com/arkansas-research-platform/RBioTools/blob/86bfb42d86adc8deffa5bc2d35015d7274fdb654/docs/RBiotools_0.5.3.tar.gz>
+5.  Download the RBioTools tar.gz from here: <https://github.com/arkansas-research-platform/RBioTools/blob/e773ec7b9b83bbba19d96df4e6c94cefe67fa737/docs/RBiotools_0.5.4.tar.gz>
 
     -   Save this tar.gz file in the root of your Working Directory
 
@@ -79,7 +79,7 @@ sessionInfo()
 
 1.  Install some basic dependencies that are required for `RBiotools`; This step is only required the **first** time that you setup your installation of R/RStudio; after the packages have been installed, they will be called using the `library()` function or will be attached as a dependency of RBiotools.
 
-```{r install.basics, eval=FALSE, echo=FALSE, error=FALSE, warning=FALSE, message=FALSE}
+```{r install.basics, eval=FALSE, echo=TRUE, error=FALSE, warning=FALSE, message=FALSE}
 
   #Install some basic dependencies that are required for RBiotools
   # the R Markdown package includes many of the dependencies for RBiotools
@@ -155,7 +155,7 @@ ifelse(!dir.exists("./R_repository/"), dir.create("./R_repository/"), "Folder ex
 
 ```{r install.packages, eval=FALSE, echo=TRUE, error=FALSE, warning=FALSE, message=FALSE}
   
-  install.packages("RBiotools_0.5.3.tar.gz", repos = NULL, type = "source")
+  install.packages("RBiotools_0.5.4.tar.gz", repos = NULL, type = "source")
 
 ```
 
@@ -263,7 +263,7 @@ Plotting a dendrogram using 16S rRNA genes is pretty easy; however, may take sev
 
 If you want to create a genome atlas for an organism already in a list, such as the ones we have already created (`eColi` and `proteobacteria)`, then you can index into the list for that value.
 
-```{r genome.atlas, eval=FALSE, echo=TRUE}
+```{r genome.atlas, eval=TRUE, echo=TRUE}
 
   createAtlas(eColi[1]) # here we index into the list to select the first item, AP012306.
 
@@ -298,7 +298,7 @@ If you want to create a genome atlas for an item **not** already stored in a lis
 
 The `plotUsage` function has many options. See the `plotUsage` documentation for more details and parameters.
 
-```{r plot.usage, eval=FALSE, echo=TRUE}
+```{r plot.usage, eval=TRUE, echo=TRUE}
 
   plotUsage(eColi[1])
 
@@ -308,7 +308,7 @@ The `plotUsage` function has many options. See the `plotUsage` documentation for
 
 Heat Maps work best for groups of organisms that are NOT closely related (like our Proteobacteria group)
 
-```{r plot.heatmap, eval=FALSE, echo=TRUE}
+```{r plot.heatmap, eval=TRUE, echo=TRUE}
 
   plotHeatMapCodon(proteobacteria)
 
