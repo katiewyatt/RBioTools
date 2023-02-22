@@ -50,7 +50,7 @@ To get started there are several installations that must be completed. These ite
 
     -   *Suggestion:* Create a directory called BMIG5101 where you can store all of your class materials for the semester.
 
-5.  Download the RBioTools tar.gz from here: <https://github.com/arkansas-research-platform/RBioTools/blob/e773ec7b9b83bbba19d96df4e6c94cefe67fa737/docs/RBiotools_0.5.4.tar.gz>
+5.  Download the RBioTools tar.gz from here: <https://github.com/arkansas-research-platform/RBioTools/blob/9ef1c29543c74979a6e4fd8429e8f4b13a9b0780/docs/RBiotools_0.5.5.tar.gz>
 
     -   Save this tar.gz file in the root of your Working Directory
 
@@ -156,7 +156,7 @@ ifelse(!dir.exists("./R_repository/"), dir.create("./R_repository/"), "Folder ex
 
 ```{r install.packages, eval=FALSE, echo=TRUE, error=FALSE, warning=FALSE, message=FALSE}
   
-  install.packages("RBiotools_0.5.4.tar.gz", repos = NULL, type = "source")
+  install.packages("RBiotools_0.5.5.tar.gz", repos = NULL, type = "source")
 
 ```
 
