@@ -4,8 +4,8 @@ title: "About"
 
 The RBiotools package provides support for Basic Comparative Microbial Genomics. It supports microbial comparative genomics with functions parameterized by a list of Gen-Bank accession numbers and R implementations of Prodigal, RNAmmer, and Linclust.
 
-Current Version: 0.5.5
-Date 2023-02-12
+Current Version: 0.5.6
+Date 2025-03-10
 
 Author:       Michael R. Leuze
 Maintainer:   Michael R. Leuze <RBiotools@gmail.com>
